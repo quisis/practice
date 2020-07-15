@@ -11,9 +11,10 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
-      - run:
-          command: ./manage.py test
-          name: Test
+      - run: jupyter-nbconvert --execute ./Image.ipynb
+      - store_artifacts:
+      path: ./Image.html
+      destination: Image.html 
 
 workflows:
   main:
