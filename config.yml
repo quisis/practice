@@ -8,9 +8,6 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
       - run: jupyter-nbconvert --execute ./Image.ipynb
       - store_artifacts:
       path: ./Image.html
