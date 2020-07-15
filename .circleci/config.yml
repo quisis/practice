@@ -12,8 +12,3 @@ jobs:
           command: jupyter-nbconvert --execute ./Image.ipynb
       - store_artifacts:
       path: ./Image.html 
-
-workflows:
-  main:
-    jobs:
-      - build-and-test
