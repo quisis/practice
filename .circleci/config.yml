@@ -7,14 +7,9 @@ jobs:
   build-and-test:
     executor: python/default
     steps:
-      - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
       - run: jupyter-nbconvert --execute ./Image.ipynb
       - store_artifacts:
       path: ./Image.html
-      destination: Image.html 
 
 workflows:
   main:
